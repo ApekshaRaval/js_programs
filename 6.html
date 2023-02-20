@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const arr = [
+            {
+                name: "pqr",
+                year: 2022
+            },
+            {
+                name: "xyz",
+                year: 2030
+            },
+            {
+                name: "appu",
+                year: 2000
+            }
+        ];
+
+        arr.sort(function (a, b) { return a.year - b.year });
+        display();
+        function display() {
+            document.getElementById("demo").innerHTML =
+                arr[0].name + " " + arr[0].year + "<br>" +
+                arr[1].name + " " + arr[1].year + "<br>" +
+                arr[2].name + " " + arr[2].year;
+        }
+    </script>
+
+</body>
+
+</html>
