@@ -14,11 +14,13 @@
 
 <body>
     <p id="demo"></p>
+
     <script>
+
         let str = prompt("Enter a String: ");
-        let s1 = str.charAt(0).toLowerCase() + str.slice(1).toUpperCase();
+        let newStr = str.charAt(0).toLowerCase() + str.slice(1).toUpperCase();
         // console.log(s1) 
-        document.getElementById('demo').innerHTML = s1;
+        document.getElementById('demo').innerHTML = newStr;
     </script>
 </body>
 

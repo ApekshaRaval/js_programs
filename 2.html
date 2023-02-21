@@ -12,13 +12,18 @@
 </head>
 
 <body>
-    <p id="demo"></p>
+
     <script>
 
+        let arr = [];
+        let size = parseInt(prompt("Enter the Size of array: "));
+        for (let i = 0; i < size; i++) {
+            arr[i] = prompt('Enter Element ' + (i + 1));
+        }
 
-        const arr = [1, 2];
         function combination(arr) {
             const result = [[]];
+            // console.log(result.length)
             for (let i = 0; i < arr.length; i++) {
                 const currlen = result.length;
                 for (let j = 0; j < currlen; j++) {
@@ -30,7 +35,8 @@
         }
 
         console.log(combination(arr));
-        document.getElementById('demo').innerHTML = combination(arr);
+
+
     </script>
 </body>
 

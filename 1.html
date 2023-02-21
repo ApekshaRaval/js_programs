@@ -14,26 +14,59 @@ to the second one -->
 
 <body>
    <p id="demo"></p>
-
+   <p id="demo1"></p>
+   <p id="demo2"></p>
    <script>
+
+
+
+      let name = prompt("Enter your name:");
+      let age = prompt("Enter your age:");
+      let city = prompt("Enter your city:");
       let obj1 = {
-         name: "Apeksha",
-         lastName: "Raval",
-         no: 40,
-         prop4: false
-      }
+         name: name,
+         age: age,
+         city: city
+      };
+      console.log(obj1);
+
+
+      let name1 = prompt("Enter your name:");
+      let age1 = prompt("Enter your age:");
+      let city1 = prompt("Enter your city:");
       let obj2 = {
-         name: "Apeksha",
-         lastName: "xyz",
-         no: 4,
+         name: name1,
+         age: age1,
+         city: city1
+      };
+
+      console.log(obj2);
+      let txt1 = "";
+      for (let x in obj1) {
+         txt1 += obj1[x] + "  ";
+      };
+
+      document.getElementById('demo').innerHTML = `Object 1 = { ${txt1} }`;
+
+      let txt2 = "";
+      for (let x in obj2) {
+         txt2 += obj2[x] + "  ";
+      };
+
+      document.getElementById('demo1').innerHTML = `Object 2 = { ${txt2} }`;
+
+      function check(obj1, obj2) {
+         if (JSON.stringify(obj1) === JSON.stringify(obj2)) {
+            return ("Property values are Matched")
+         }
+         else {
+            return ("Property values are not  Matched")
+         }
       }
-      if (obj1.name === obj2.name && obj1.lastName === obj2.lastName && obj1.n0 == obj2.no) {
-         // console.log("Matched")
-         document.getElementById('demo').innerHTML = "object values are matched"
-      } else {
-         // console.log("Not Matched");
-         document.getElementById('demo').innerHTML = "object values are not  matched"
-      }
+      document.getElementById('demo2').innerHTML = check(obj1, obj2);
+
+
+
    </script>
 
 </body>

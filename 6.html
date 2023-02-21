@@ -11,7 +11,8 @@
 <body>
     <p id="demo"></p>
     <script>
-        const arr = [
+
+        const arr1 = [
             {
                 name: "pqr",
                 year: 2022
@@ -25,15 +26,39 @@
                 year: 2000
             }
         ];
+        let sortarr1 = arr1.sort(function (a, b) { return a.year - b.year });
+        console.log(sortarr1);
 
-        arr.sort(function (a, b) { return a.year - b.year });
-        display();
-        function display() {
-            document.getElementById("demo").innerHTML =
-                arr[0].name + " " + arr[0].year + "<br>" +
-                arr[1].name + " " + arr[1].year + "<br>" +
-                arr[2].name + " " + arr[2].year;
-        }
+        let name = prompt("Enter your name:");
+        let age = prompt("Enter your age:");
+        let city = prompt("Enter your city:");
+        let obj1 = {
+            name: name,
+            age: age,
+            city: city
+        };
+        console.log(obj1);
+
+        let name1 = prompt("Enter your name:");
+        let age1 = prompt("Enter your age:");
+        let city1 = prompt("Enter your city:");
+        let obj2 = {
+            name: name1,
+            age: age1,
+            city: city1
+        };
+        console.log(obj2);
+
+        let arr = [];
+        arr.push(obj1);
+        arr.push(obj2);
+        console.log(arr)
+
+        let sort = arr.sort();
+        console.log(sort)
+
+
+
     </script>
 
 </body>

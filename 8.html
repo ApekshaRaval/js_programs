@@ -13,23 +13,32 @@
 <body>
     <p id="demo"></p>
     <p id="demo1"></p>
-    <script>
-        let date = new Date();
-        let time = date.toLocaleTimeString();
-        document.getElementById('demo').innerHTML = time;
 
+    <script>
+
+        let date = new Date();
+        document.getElementById('demo').innerHTML = date;
         // convert 24 hour format to 12 hour format
         let hours = date.getHours();
-        if (hours > 12) {
-            let hours = date.getHours() % 12;
-            let minutes = date.getMinutes();
-            let seconds = date.getSeconds();
-            document.getElementById('demo1').innerHTML = hours + ":" + minutes + ":" + seconds + " PM";
-        } else {
-            document.getElementById('demo1').innerHTML = hours + ":" + minutes + ":" + seconds + " AM";
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        // console.log(hours)
+        clockFormat(hours);
+
+        function clockFormat(hours) {
+
+            if (hours == 12) {
+                document.getElementById('demo1').innerHTML = hours + ":" + minutes + ":" + seconds + " PM";
+            }
+            else if (hours > 11) {
+                hours %= 12;
+                document.getElementById('demo1').innerHTML = hours + ":" + minutes + ":" + seconds + " PM";
+            }
+
+            else {
+                document.getElementById('demo1').innerHTML = hours + ":" + minutes + ":" + seconds + " AM";
+            }
         }
-
-
 
     </script>
 </body>

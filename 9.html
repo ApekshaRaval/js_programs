@@ -13,22 +13,43 @@
 </head>
 
 <body>
+
+    <p id="demo"></p>
     <script>
 
-        const arr = [1, 4, 6, 7, {
-            name: "Apeksha",
-            lastName: "Raval",
-            no: 40,
-            prop4: false
-        }
-        ];
 
+        let name = prompt("Enter your name:");
+        let age = prompt("Enter your age:");
+        let city = prompt("Enter your city:");
+        let obj1 = {
+            name: name,
+            age: age,
+            city: city
+        };
+        console.log(obj1);
 
-        if (arr.length == 0) {
-            console.log("Array is empty");
-        } else {
-            console.log("Array size is: " + arr.length);
+        let name1 = prompt("Enter your name:");
+        let age1 = prompt("Enter your age:");
+        let city1 = prompt("Enter your city:");
+        let obj2 = {
+            name: name1,
+            age: age1,
+            city: city1
+        };
+        console.log(obj2);
+
+        let arr = [];
+        arr.push(obj1);
+        arr.push(obj2);
+        console.log(arr);
+
+        function check(arr) {
+            for (let i = 0; i < arr.length; i++)
+                if (arr[i].length == 0) {
+                    return false;
+                }
         }
+        console.log(check(arr));
 
     </script>
 </body>

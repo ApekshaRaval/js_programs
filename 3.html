@@ -14,23 +14,31 @@
 </head>
 
 <body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
     <script>
-
-        const arr = [40, 23, 27];
-
-        let min = arr[0];
-        let max = arr[0];
-        for (let i = 1; i < arr.length; ++i) {
-            if (arr[i] < min) {
-                min = arr[i];
-
-            } else if (arr[i] > max) {
-                max = arr[i];
-
-            }
-
+        let arr = [];
+        let size = parseInt(prompt("Enter the Size of array: "));
+        for (let i = 0; i < size; i++) {
+            arr[i] = prompt('Enter Element ' + (i + 1));
         }
-        console.log(`maximum number is :${max} , minimum number is :${min}`);
+        // console.log(arr);
+        document.getElementById('demo').innerHTML = " Array is : [" + arr + "]";
+        MinMax(arr);
+
+        function MinMax(arr) {
+            let min = arr[0];
+            let max = arr[0];
+            for (let i = 1; i < arr.length; ++i) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                } else if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            document.getElementById('demo1').innerHTML = ` Minimum number is :${min}  Maximum number is :${max}`;
+        }
     </script>
 </body>
 
